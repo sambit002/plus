@@ -1,5 +1,6 @@
 // here we shall try and find out how many times a substring appears in a string
 // so let us begin
+// for each letter of the longer string, we run through the entire short string
 #include <bits/stdc++.h>
 using namespace std;
 
