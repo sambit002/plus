@@ -110,11 +110,30 @@ string sorted(string s) {
     return s;
 }
 
+auto insertionSort(vector<int> arr) {
+    for (int i = 1; i < arr.size(); ++i) {
+        int temp = arr[i];
+        int j;
+        for (j = i - 1; j >= 0 && arr[j] > temp; --j) {
+            arr[j+1] = arr[j];
+        }
+        arr[j+1] = temp;
+    }
+    return arr;
+}
+
+
 int main() {
-    int count = matchSubstr("abadaba", "ab");
-    bool ana = anagram("sam", "mass");
-    int len = substrLength("abbccccd", 'b');
-    string sortedS = sorted("xyabc");
-    cout << sortedS << endl;
+    // int count = matchSubstr("abadaba", "ab");
+    // bool ana = anagram("sam", "mass");
+    // int len = substrLength("abbccccd", 'b');
+    // string sortedS = sorted("xyabc");
+    // cout << sortedS << endl;
+    vector<int> arr{4,5,10,1,2,3};
+    vector<int> res = insertionSort(arr);
+    for (auto i  = res.begin(); i != res.end(); ++i) {
+        cout << *i << " ";
+    }
+    cout << endl;
     return 0;
 }
